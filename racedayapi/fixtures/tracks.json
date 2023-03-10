@@ -1,0 +1,100 @@
+[
+    {
+        "model": "racedayapi.track",
+        "pk": 1,
+        "fields" : {
+            "user": 1,
+            "tracktype": 1,
+            "name": "Indianapolis Motor Speedway",
+            "location": "Speedway, IN",
+            "length": "2.5mi",
+            "turns": "4",
+            "seating_capacity": "257,327",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Indianapolis-motor-speedway-1848561.jpg"
+        }
+    },
+    {
+        "model": "racedayapi.track",
+        "pk": 2,
+        "fields" : {
+            "user": 1,
+            "tracktype": 3,
+            "name": "Eldora Speedway",
+            "location": "Rossburg, OH",
+            "length": "0.5mi",
+            "turns": "4",
+            "seating_capacity": "30,000",
+            "image": "https://www.ovdtr.com/wp-content/uploads/2020/12/Aerial-World-100-1.jpg"
+        }
+    },
+    {
+        "model": "racedayapi.track",
+        "pk": 3,
+        "fields" : {
+            "user": 1,
+            "tracktype": 2,
+            "name": "Mid-Ohio Sports Car Course",
+            "location": "Lexington, OH",
+            "length": "2.258mi",
+            "turns": "13",
+            "seating_capacity": "87,000",
+            "image": "https://www.thedrive.com/content/archive-images/midohio_hero.jpg"
+        }
+    },
+    {
+        "model": "racedayapi.track",
+        "pk": 4,
+        "fields" : {
+            "user": 1,
+            "tracktype": 3,
+            "name": "Fremont Speedway",
+            "location": "Fremont, OH",
+            "length": "0.333mi",
+            "turns": "4",
+            "seating_capacity": "6,000",
+            "image": "https://www.gannett-cdn.com/-mm-/2c87ad11a41f1a14389ecd079ce1207593cd8e0b/c=2-0-799-450/local/-/media/2017/10/19/OHGroup/Fremont/636440249693110423-DJI-0012-MP4-00-01-48-15-Still006-preview.jpeg"
+        }
+    },
+    {
+        "model": "racedayapi.track",
+        "pk": 5,
+        "fields" : {
+            "user": 1,
+            "tracktype": 1,
+            "name": "Nashville Fairgrounds Speedway",
+            "location": "Nashville, TN",
+            "length": "0.596mi",
+            "turns": "4",
+            "seating_capacity": "15,000",
+            "image": "https://nashvillefairgroundsspeedway.racing/wp-content/uploads/2020/12/20200620_073539-scaled.jpg"
+        }
+    },
+    {
+        "model": "racedayapi.track",
+        "pk": 6,
+        "fields" : {
+            "user": 1,
+            "tracktype": 4,
+            "name": "Detroit Grand Prix",
+            "location": "Detroit, MI",
+            "length": "2.35mi",
+            "turns": "14",
+            "seating_capacity": "15,000",
+            "image": "https://www.gannett-cdn.com/presto/2018/07/12/PDTF/b111887a-5c8c-4df6-bcab-782cad72f74a-prix_060317_kd-6.jpg"
+        }
+    },
+    {
+        "model": "racedayapi.track",
+        "pk": 7,
+        "fields" : {
+            "user": 1,
+            "tracktype": 2,
+            "name": "Circuit Gilles Villeneuve",
+            "location": "Montreal, CA",
+            "length": "2.709mi",
+            "turns": "14",
+            "seating_capacity": "15,000",
+            "image": "https://www.formula1.com/content/dam/fom-website/manual/Misc/2022manual/2022Races/CanadaGP/Pre-race/SD-2017-Canada-Saturday-047_1727421.JPG"
+        }
+    }
+]

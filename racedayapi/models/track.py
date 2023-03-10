@@ -4,9 +4,11 @@ from django.contrib.auth.models import User
 
 class Track(models.Model):
 
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    track_typeId = models.ForeignKey("Track_Type", on_delete=models.CASCADE, related_name="Types")
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name="Users")
+    tracktype = models.ForeignKey("Track_Type", on_delete=models.CASCADE, related_name="Types")
     name = models.CharField(max_length=300)
     location = models.CharField(max_length=150)
-    image = models.ImageField()
-    bio = models.CharField(max_length=300)
+    length = models.CharField(max_length=100)
+    turns = models.CharField(max_length=2)
+    seating_capacity = models.CharField(max_length=100)
+    image = models.CharField(max_length=500)

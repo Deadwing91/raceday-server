@@ -13,9 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import include
+from rest_framework import routers
+from racedayapi.views import TrackView, TrackTypeView, SeriesView
 from django.contrib import admin
 from django.urls import path
+from racedayapi.views import register_user, login_user
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'tracktypes', TrackTypeView, 'tracktype')
+router.register(r'series', SeriesView, 'series')
+router.register(r'tracks', TrackView, 'track')
 
 urlpatterns = [
+    # Requests to http://localhost:8000/register will be routed to the register_user function
+    path('register', register_user),
+    # Requests to http://localhost:8000/login will be routed to the login_user function
+    path('login', login_user),
     path('admin/', admin.site.urls),
+    path('', include(router.urls)),
 ]
