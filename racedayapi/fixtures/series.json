@@ -1,0 +1,50 @@
+[
+    {
+        "model": "racedayapi.series",
+        "pk": 1,
+        "fields" : {
+            "name": "NASCAR CUP",
+            "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/brad-keselowski-driver-of-the-kohler-generators-ford-leads-news-photo-1645398974.jpg."
+        }
+    },
+    {
+        "model": "racedayapi.series",
+        "pk": 2,
+        "fields" : {
+            "name": "INDYCAR",
+            "image": "https://digbza2f4g9qo.cloudfront.net/-/media/IndyCar/Backgrounds/Virtual-Backgrounds/IMS-Zoom2.jpg"
+        }
+    },
+    {
+        "model": "racedayapi.series",
+        "pk": 3,
+        "fields" : {
+            "name": "IMSA",
+            "image": "https://www.incimages.com/uploaded_files/image/1920x1080/imsa_28969163_316486.jpg"
+        }
+    },
+    {
+        "model": "racedayapi.series",
+        "pk": 4,
+        "fields" : {
+            "name": "Formula 1",
+            "image": "https://www.formula1.com/content/dam/fom-website/sutton/2022/Italy/Sunday/1422823415.jpg.transform/9col/image.jpg"
+        }
+    },
+    {
+        "model": "racedayapi.series",
+        "pk": 5,
+        "fields" : {
+            "name": "World of Outlaws",
+            "image": "https://wallpaperaccess.com/full/120213.jpg"
+        }
+    },
+    {
+        "model": "racedayapi.series",
+        "pk": 6,
+        "fields" : {
+            "name": "NASCAR XFINITY",
+            "image": "https://library.sportingnews.com/2021-08/nascar-xfinity-bristol-060120-getty-ftrjpg_8pv3p0vfwjwm1dn60ahexhjd8.jpg"
+        }
+    }
+]

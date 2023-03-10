@@ -1,0 +1,30 @@
+[
+    {
+        "model": "racedayapi.track_type",
+        "pk": 1,
+        "fields": {
+            "label": "Oval"
+        }
+    },
+    {
+        "model": "racedayapi.track_type",
+        "pk": 2,
+        "fields": {
+            "label": "Road Course"
+        }
+    },
+    {
+        "model": "racedayapi.track_type",
+        "pk": 3,
+        "fields": {
+            "label": "Dirt"
+        }
+    },
+    {
+        "model": "racedayapi.track_type",
+        "pk": 4,
+        "fields": {
+            "label": "Street Course"
+        }
+    }
+]
