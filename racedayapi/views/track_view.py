@@ -40,17 +40,16 @@ class TrackView(ViewSet):
         Returns
             Response -- JSON serialized track instance
         """
-        user = User.objects.get(user=request.auth.user)
-        tracktype = Track_Type.objects.get(pk=request.data["track_type"])
+        tracktype = Track_Type.objects.get(pk=request.data["tracktype"])
 
         track = Track.objects.create(
             name=request.data["name"],
             location=request.data["location"],
             length=request.data["length"],
-            turns = request.data["length"],
+            turns = request.data["turns"],
             seating_capacity=request.data["seating_capacity"],
             image=request.data["image"],
-            user=user,
+            user=request.auth.user,
             tracktype=tracktype
         )
         serializer = TrackSerializer(track)
@@ -102,4 +101,4 @@ class TrackSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Track
-        fields = ('id', 'user', 'tracktype', 'name', 'location', 'length', 'turns', 'seating_capacity', 'image', )
+        fields = ( 'id', 'user', 'tracktype', 'name', 'location', 'length', 'turns', 'seating_capacity', 'image' )
