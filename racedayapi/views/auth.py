@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login_user(request):
@@ -30,8 +31,9 @@ def login_user(request):
         return Response(data)
     else:
         # Bad login details were provided. So we can't log the user in.
-        data = { 'valid': False }
+        data = {'valid': False}
         return Response(data)
+
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
@@ -39,7 +41,7 @@ def register_user(request):
     '''Handles the creation of a new gamer for authentication
 
     Method arguments:
-      request -- The full HTTP request object
+        request -- The full HTTP request object
     '''
 
     # Create a new user by invoking the `create_user` helper method
@@ -48,11 +50,12 @@ def register_user(request):
         username=request.data['username'],
         password=request.data['password'],
         first_name=request.data['first_name'],
-        last_name=request.data['last_name']
+        last_name=request.data['last_name'],
+        email=request.data['email']
     )
 
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=new_user)
     # Return the token to the client
-    data = { 'token': token.key }
+    data = {'token': token.key}
     return Response(data)
