@@ -33,9 +33,10 @@ class TrackView(ViewSet):
         tracks = Track.objects.all()
 
         if "series" in request.query_params:
-            series_id = request.query_params.get('series')
+            series = request.query_params.get('series')
             tracks = Track.objects.filter(
-                Track_Relationships__series=series_id)
+                Track_Relationships__series=series)
+        
 
         serializer = TrackSerializer(tracks, many=True)
         return Response(serializer.data)
@@ -84,6 +85,17 @@ class TrackView(ViewSet):
         track.tracktype = tracktype
         track.save()
 
+        series_selected = request.data['series']
+
+        current_series_relationships = Series_Track.objects.filter(track__id=pk)
+        current_series_relationships.delete()
+
+        for series in series_selected:
+            series_Track = Series_Track()
+            series_Track.track = track
+            series_Track.series = Series.objects.get(pk=series)
+            series_Track.save()
+
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk):
@@ -115,17 +127,3 @@ class TrackSerializer(serializers.ModelSerializer):
         model = Track
         fields = ('id', 'user', 'tracktype', 'name', 'location',
                 'length', 'turns', 'seating_capacity', 'image', 'series')
-
-
-# post = Post.objects.create(
-#                 title=request.data["title"],
-#                 user=user,
-#                 category=cat,
-#                 publication_date=datetime.date.today(),
-#                 image_url=data,
-#                 content=request.data["content"],
-#                 approved=False
-#             )
-#         post.tags.add(*request.data['tags'])
-#         serializer = PostSerializer(post)
-#         return Response(serializer.data, status=status.HTTP_201_CREATED)
