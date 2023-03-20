@@ -12,3 +12,4 @@ class Track(models.Model):
     turns = models.CharField(max_length=2)
     seating_capacity = models.CharField(max_length=100)
     image = models.CharField(max_length=500)
+    series = models.ManyToManyField("Series", through='Series_Track', related_name="Series_Track_series")
