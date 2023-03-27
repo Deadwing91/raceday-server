@@ -30,12 +30,12 @@ class TrackView(ViewSet):
         Returns:
             Response -- JSON serialized list of tracks
         """
-        tracks = Track.objects.all()
+        tracks = Track.objects.all().order_by('name')
 
         if "series" in request.query_params:
             series = request.query_params.get('series')
             tracks = Track.objects.filter(
-                Track_Relationships__series=series)
+                Track_Relationships__series=series).order_by('name')
         
 
         serializer = TrackSerializer(tracks, many=True)
