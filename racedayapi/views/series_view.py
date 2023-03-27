@@ -40,7 +40,7 @@ class SeriesView(ViewSet):
         #     # Check to see if the gamer is in the attendees list on the series
         #     series.joined = user in series.name.all()
 
-        series = Series.objects.all()
+        series = Series.objects.all().order_by('name')
         serializer = SeriesSerializer(series, many=True)
         return Response(serializer.data)
 
