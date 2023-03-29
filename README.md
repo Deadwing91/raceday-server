@@ -1,4 +1,4 @@
-# raceday-server
+# Race Day Server
 
 
 ## Installation
